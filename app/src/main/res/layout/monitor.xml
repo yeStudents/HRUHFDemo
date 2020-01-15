@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:gravity="fill_vertical"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#EEEEEE"
+	    android:gravity="fill_vertical"
+	    android:orientation="horizontal" >
+	    
+        <CheckBox  
+			android:id="@+id/check_open_monitor"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10.0sp"
+			android:textColor="#ff222222"
+			android:textSize="16.0sp"
+			android:checked="false"
+			android:text="@string/setting_monitor"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true" />
+        
+        <TextView
+		    android:id="@+id/refresh"
+			android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+           	android:layout_marginTop="10.0sp"
+			android:layout_marginRight="10.0sp"
+			android:layout_marginBottom="10.0sp"
+			android:paddingLeft="10.0sp"
+			android:paddingTop="5.0sp"
+			android:paddingRight="10.0sp"
+			android:paddingBottom="5.0sp"
+			android:gravity="center_horizontal"
+			android:background="@drawable/button_selector"
+			android:text="@string/refresh"
+			android:textColor="#ff222222"
+			android:textStyle="bold"
+			android:textSize="16.0sp"
+			android:clickable="true"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true" />
+        
+	</RelativeLayout>
+	
+    <View
+	    android:layout_width="fill_parent"
+		android:layout_height="1dip"
+		android:paddingLeft="10.0sp"
+		android:paddingRight="10.0sp"
+		android:background="#ff555555" />
+    
+    <ListView 
+		android:id="@+id/monitor_list_view"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:drawSelectorOnTop="false"
+		android:scrollbars="vertical"
+		android:paddingLeft="5.0sp"
+		android:paddingTop="5.0sp"
+		android:paddingRight="5.0sp"
+		android:paddingBottom="5.0sp"
+		android:listSelector="@android:color/transparent"
+		android:scrollingCache="false"
+		android:transcriptMode="alwaysScroll"
+		android:divider="#FF222222"
+		android:dividerHeight="1dip" />
+
+</LinearLayout>
