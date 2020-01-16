@@ -18,7 +18,6 @@ import android.widget.TextView;
 import com.reader.helper.InventoryBuffer;
 import com.reader.helper.InventoryBuffer.InventoryTagMap;
 import com.reader.helper.ReaderHelper;
-import com.jf.uhf.R;
 import com.jf.uhf.tagpage.RealListAdapter;
 
 public class TagRealList extends LinearLayout {

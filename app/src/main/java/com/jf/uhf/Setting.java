@@ -1,10 +1,6 @@
 package com.jf.uhf;
 
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
-import java.net.UnknownHostException;
+
 
 import com.reader.base.CMD;
 import com.reader.base.ERROR;
@@ -13,7 +9,7 @@ import com.reader.helper.InventoryBuffer;
 import com.reader.helper.OperateTagBuffer;
 import com.reader.helper.ReaderHelper;
 import com.reader.helper.ReaderSetting;
-import com.jf.uhf.R;
+
 
 
 import com.jf.uhf.setpage.PageReaderBeeper;

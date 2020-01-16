@@ -18,7 +18,6 @@ package com.jf.uhf;
 
 import java.util.Set;
 
-import com.jf.uhf.R;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -31,7 +30,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
+
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -69,14 +68,13 @@ public class DeviceListActivity extends Activity {
     {
         super.onCreate(savedInstanceState);
 
-        // 创建并显示窗口
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.device_list);
 
-        // 设定默认返回值为取消
+
         setResult(Activity.RESULT_CANCELED);
 
-        // 设定扫描按键响应
+
         Button scanButton = (Button) findViewById(R.id.button_scan);
         
         scanButton.setOnClickListener(new OnClickListener() 
@@ -88,34 +86,34 @@ public class DeviceListActivity extends Activity {
             }
         });
 
-        // 初使化设备存储数组
+
         mPairedDevicesArrayAdapter = new ArrayAdapter<String>(this, R.layout.device_name);
         mNewDevicesArrayAdapter = new ArrayAdapter<String>(this, R.layout.device_name);
 
-        // 设置已配队设备列表
+
         pairedListView = (ListView) findViewById(R.id.paired_devices);
         pairedListView.setAdapter(mPairedDevicesArrayAdapter);
         pairedListView.setOnItemClickListener(mDeviceClickListener);
 
-        // 设置新查找设备列表
+
         newDevicesListView = (ListView) findViewById(R.id.new_devices);
         newDevicesListView.setAdapter(mNewDevicesArrayAdapter);
         newDevicesListView.setOnItemClickListener(mDeviceClickListener);
 
-        // 注册接收查找到设备action接收器
+
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         
         filter.addAction(BluetoothDevice.ACTION_NAME_CHANGED);        
         filter.addAction(BluetoothDevice.ACTION_CLASS_CHANGED);
         filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);        
         this.registerReceiver(mReceiver, filter);
-        // 得到本地蓝牙句柄
+
         mBtAdapter = BluetoothAdapter.getDefaultAdapter();
 
-        // Get a set of currently paired devices
+
         Set<BluetoothDevice> pairedDevices = mBtAdapter.getBondedDevices();
 
-        // If there are paired devices, add each one to the ArrayAdapter
+
         if (pairedDevices.size() > 0) 
         {
             findViewById(R.id.title_paired_devices).setVisibility(View.VISIBLE);

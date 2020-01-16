@@ -25,7 +25,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jf.uhf.R;
 import com.reader.base.ERROR;
 import com.reader.base.ReaderBase;
 import com.reader.helper.InventoryBuffer;
@@ -37,15 +36,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
-	// ViewPager是google SDk中自带的一个附加包的一个类，可以用来实现屏幕间的切换。
-	// android-support-v4.jar
-	private ViewPager mPager;//页卡内容
-	private List<View> listViews; // Tab页面列表
-	private ImageView cursor;// 动画图片
-	private TextView t1, t2, t3;// 页卡头标
-	private int offset = 0;// 动画图片偏移量
-	private int currIndex = 0;// 当前页卡编号
-	private int bmpW;// 动画图片宽度
+
+	private ViewPager mPager;
+	private List<View> listViews;
+	private ImageView cursor;
+	private TextView t1, t2, t3;
+	private int offset = 0;
+	private int currIndex = 0;
+	private int bmpW;
 	
 	private ReaderBase mReader;
 	private ReaderHelper mReaderHelper;
@@ -126,9 +124,7 @@ public class MainActivity extends Activity {
 		}
 	};
 
-	/**
-	 * 初始化头标
-	 */
+
 	private void InitTextView() {
 		t1 = (TextView) findViewById(R.id.tab_index1);
 		t2 = (TextView) findViewById(R.id.tab_index2);
@@ -139,9 +135,7 @@ public class MainActivity extends Activity {
 		t3.setOnClickListener(new MyOnClickListener(2));
 	}
 	
-	/**
-	 * 初始化ViewPager
-	 */
+
 	private void InitViewPager() {
 		mPager = (ViewPager) findViewById(R.id.vPager);
 		listViews = new ArrayList<View>();
@@ -154,24 +148,20 @@ public class MainActivity extends Activity {
 		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
 	}
 
-	/**
-	 * 初始化动画
-	 */
+
 	private void InitImageView() {
 		cursor = (ImageView) findViewById(R.id.cursor);
-		bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.a).getWidth();// 获取图片宽度
+		bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.a).getWidth();
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		int screenW = dm.widthPixels;// 获取分辨率宽度
-		offset = (screenW / 3 - bmpW) / 2;// 计算偏移量
+		int screenW = dm.widthPixels;
+		offset = (screenW / 3 - bmpW) / 2;
 		Matrix matrix = new Matrix();
 		matrix.postTranslate(offset, 0);
-		cursor.setImageMatrix(matrix);// 设置动画初始位置
+		cursor.setImageMatrix(matrix);
 	}
 
-	/**
-	 * ViewPager适配器
-	 */
+
 	public class MyPagerAdapter extends PagerAdapter {
 		public List<View> mListViews;
 
@@ -218,9 +208,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/**
-	 * 头标点击监听
-	 */
+
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
 
@@ -234,13 +222,11 @@ public class MainActivity extends Activity {
 		}
 	};
 
-	/**
-	 * 页卡切换监听
-	 */
+
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 
-		int one = offset * 2 + bmpW;// 页卡1 -> 页卡2 偏移量
-		int two = one * 2;// 页卡1 -> 页卡3 偏移量
+		int one = offset * 2 + bmpW;
+		int two = one * 2;
 
 		@Override
 		public void onPageSelected(int arg0) {
@@ -269,7 +255,7 @@ public class MainActivity extends Activity {
 				break;
 			}
 			currIndex = arg0;
-			animation.setFillAfter(true);// True:图片停在动画结束位置
+			animation.setFillAfter(true);
 			animation.setDuration(300);
 			cursor.startAnimation(animation);
 		}

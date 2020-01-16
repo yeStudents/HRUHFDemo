@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jf.uhf"
-    android:versionCode="2"
-    android:versionName="2.8" >
+    package="com.jf.uhf">
+
 
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -15,12 +14,14 @@
         android:name="com.jf.uhf.UHFApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+       >
 
         <activity
             android:name="com.jf.uhf.ConnectActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar"
+
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,86 +31,76 @@
         </activity>
 
         <activity
-            android:name="com.jf.uhf.PageReaderAddress"
-            android:theme="@android:style/Theme.NoTitleBar"
+            android:name="com.jf.uhf.setpage.PageReaderAddress"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderIdentifier"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderFirmwareVersion"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderBarcode"
-            android:theme="@android:style/Theme.NoTitleBar"
+
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderGpio"
-            android:theme="@android:style/Theme.NoTitleBar"
+
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderBeeper"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderOutPower"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderAntenna"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderReturnLoss"
-            android:theme="@android:style/Theme.NoTitleBar"
+
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderAntDetector"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderMonza"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderRegion"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.setpage.PageReaderProfile"
-            android:theme="@android:style/Theme.NoTitleBar"
+
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.tagpage.PageInventoryReal"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
@@ -139,19 +130,16 @@
 
         <activity
             android:name="com.jf.uhf.tagpage.PageTagAccess"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.tagpage.PageTag6BAccess"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
             android:name="com.jf.uhf.MainActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
@@ -163,7 +151,7 @@
 
         <activity
             android:name="com.jf.uhf.ConnectBlueTooth"
-            android:theme="@android:style/Theme.NoTitleBar"
+
             android:windowSoftInputMode="adjustPan" >
         </activity>
 
@@ -176,7 +164,6 @@
 
         <activity
             android:name="com.jf.uhf.ConnectRs232"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
 

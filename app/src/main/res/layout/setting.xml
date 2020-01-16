@@ -176,7 +176,7 @@
             android:layout_marginBottom="10.0dip"
             android:layout_marginTop="20.0dip"
             android:gravity="center_vertical"
-            android:visibility="gone"
+            android:visibility="visible"
             android:paddingLeft="4.0dip"
             android:text="@string/setting_rf"
             android:textColor="#ff888888"
@@ -201,7 +201,7 @@
                         android:layout_marginRight="2.0dip"
                         android:background="@drawable/table_item_top_selector"
                         android:paddingBottom="10.0dip"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:paddingTop="10.0dip"
                         android:clickable="true" >
                         

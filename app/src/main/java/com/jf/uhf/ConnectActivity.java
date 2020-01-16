@@ -1,8 +1,9 @@
 package com.jf.uhf;
 
-import com.jf.uhf.R;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -16,8 +17,14 @@ public class ConnectActivity extends Activity {
 	private TextView mConectRs232;
 	private TextView mConectTcpIp;
 	private TextView mConectBluetooth;
-	
-	@Override
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main,menu);
+        return true;
+    }
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_connect);
@@ -33,8 +40,11 @@ public class ConnectActivity extends Activity {
 		mConectTcpIp.setOnClickListener(setConnectOnClickListener);
 		mConectBluetooth.setOnClickListener(setConnectOnClickListener);
 	}
-	
-	private OnClickListener setConnectOnClickListener = new OnClickListener() {
+
+
+
+
+    private OnClickListener setConnectOnClickListener = new OnClickListener() {
 		public void onClick(View v) {
 			switch(v.getId()) {
 			case R.id.textview_connect_rs232:

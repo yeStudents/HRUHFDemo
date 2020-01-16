@@ -8,15 +8,15 @@ import java.util.List;
 import java.util.UUID;
 
 import com.reader.helper.ReaderHelper;
-import com.jf.uhf.R;
-import com.jf.uhf.serialport.SerialPort;
-import com.jf.uhf.serialport.SerialPortFinder;
+
 import com.jf.uhf.spiner.SpinerPopWindow;
 import com.jf.uhf.spiner.AbstractSpinerAdapter.IOnItemSelectListener;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.serialport.SerialPort;
+import android.serialport.SerialPortFinder;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,12 +25,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
+
 import android.content.Intent;
 
-@SuppressLint("HandlerLeak")
+
 public class ConnectRs232 extends Activity {
 
 	private TextView mConectButton;
@@ -93,8 +91,13 @@ public class ConnectRs232 extends Activity {
 				}
 				
 				try {
-				
-					mSerialPort = new SerialPort(new File(entryValues[mPosPort]), Integer.parseInt(mBaudList.get(mPosBaud)), 0);
+                    mSerialPort =SerialPort
+                            .newBuilder(new File(entryValues[mPosPort]), Integer.parseInt(mBaudList.get(mPosBaud)))
+                            .dataBits(8)
+                            .parity(0)
+                            .stopBits(1)
+                            .build();
+					//mSerialPort = new SerialPort(new File(entryValues[mPosPort]), Integer.parseInt(mBaudList.get(mPosBaud)), 0);
 					
 					try {
 						mReaderHelper = ReaderHelper.getDefaultHelper();

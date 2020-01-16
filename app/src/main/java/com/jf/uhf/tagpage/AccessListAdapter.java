@@ -19,7 +19,7 @@ public class AccessListAdapter extends BaseAdapter {
 	
 	private List<OperateTagMap> listMap;
 	
-	public final class ListItemView{                //自定义控件集合     
+	public final class ListItemView{
 		public TextView mIdText;
 		public TextView mPCText;
 		public TextView mCRCText;

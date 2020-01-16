@@ -33,7 +33,8 @@ public class UHFApplication extends Application {
 		//CrashHandler crashHandler = CrashHandler.getInstance();
 		//crashHandler.init(getApplicationContext());
 	}
-	
+
+
 	public void addActivity(Activity activity) {
 		activities.add(activity);
 	}

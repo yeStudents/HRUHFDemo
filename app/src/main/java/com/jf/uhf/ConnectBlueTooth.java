@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 import com.reader.helper.ReaderHelper;
-import com.jf.uhf.R;
+
 
 import android.os.Bundle;
 import android.os.Handler;

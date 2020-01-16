@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,7 +32,7 @@ import android.widget.TextView;
 
 public class PageReaderOutPower extends Activity {
 	private LogList mLogList;
-	
+    private static final String TAG = "PageReaderOutPower";
 	private TextView mSet;
 	private TextView mGet;
 	
@@ -118,7 +119,7 @@ public class PageReaderOutPower extends Activity {
 		public void onReceive(Context context, Intent intent) {
 			if (intent.getAction().equals(ReaderHelper.BROADCAST_REFRESH_READER_SETTING)) {
 				byte btCmd = intent.getByteExtra("cmd", (byte) 0x00);
-				
+                Log.i(TAG, "onReceive: "+btCmd);
 //				if (btCmd == CMD.GET_OUTPUT_POWER || btCmd == CMD.SET_OUTPUT_POWER) {
 //					updateView();
 //				}

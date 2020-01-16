@@ -1,6 +1,5 @@
 package com.jf.uhf;
 
-import com.jf.uhf.R;
 
 import android.app.Activity;
 import android.content.Context;

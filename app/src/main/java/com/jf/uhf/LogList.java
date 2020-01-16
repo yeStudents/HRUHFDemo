@@ -82,7 +82,7 @@ public class LogList extends LinearLayout {
 		Date now=new Date();
 		SimpleDateFormat temp=new SimpleDateFormat("kk:mm:ss");
 		SpannableString tSS = new SpannableString(temp.format(now) + ": " + strLog);
-		tSS.setSpan(new ForegroundColorSpan(type == ERROR.SUCCESS ? Color.BLACK : Color.RED), 0, tSS.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  //ºìÉ«¸ßÁÁ
+		tSS.setSpan(new ForegroundColorSpan(type == ERROR.SUCCESS ? Color.BLACK : Color.RED), 0, tSS.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		mLogListItem.add(tSS);
 		
 		mLogHelpText.setText(tSS);

@@ -80,7 +80,7 @@ public class PageInventoryReal extends Activity {
     
     private long mRefreshTime;
     
-    public String filename=""; //用来保存存储的文件名
+    public String filename="";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
@@ -207,7 +207,7 @@ public class PageInventoryReal extends Activity {
 			{
 				return;
 			}
-			//停止按钮
+
 			if(arg0.getId() == R.id.stop) 
 			{
 				refreshText();
@@ -313,34 +313,34 @@ public class PageInventoryReal extends Activity {
 	
 	private void SaveData() 
 	{		
-		//显示对话框输入文件名
-		LayoutInflater factory = LayoutInflater.from(PageInventoryReal.this);  //图层模板生成器句柄
-		final View DialogView =  factory.inflate(R.layout.sname, null);  //用sname.xml模板生成视图模板
+
+		LayoutInflater factory = LayoutInflater.from(PageInventoryReal.this);
+		final View DialogView =  factory.inflate(R.layout.sname, null);
 		new AlertDialog.Builder(PageInventoryReal.this)
 		.setTitle("保存文件")
-		.setView(DialogView)   //设置视图模板
+		.setView(DialogView)
 		.setPositiveButton("确定",
-		new DialogInterface.OnClickListener() //确定按键响应函数
+		new DialogInterface.OnClickListener()
 		{
 			public void onClick(DialogInterface dialog, int whichButton)
 			{
-				EditText text1 = (EditText)DialogView.findViewById(R.id.sname);  //得到文件名输入框句柄
-				filename = text1.getText().toString();  //得到文件名				
+				EditText text1 = (EditText)DialogView.findViewById(R.id.sname);
+				filename = text1.getText().toString();
 
-				// 准备设置excel工作表的标题
+
 				String[] title = { "ID","TagEpc", "PC", "Conut" ,"RSSI" ,"Time"};
 				try
 				{
 					
-					// 获得开始时间
+
 					Calendar ca = Calendar.getInstance();
-					int year = ca.get(Calendar.YEAR);//获取年份
-					int month=ca.get(Calendar.MONTH);//获取月份
+					int year = ca.get(Calendar.YEAR);
+					int month=ca.get(Calendar.MONTH);
 					if(month==0)month=1;
-					int day=ca.get(Calendar.DATE);//获取日
-					int minute=ca.get(Calendar.MINUTE);//分
-					int hour=ca.get(Calendar.HOUR);//小时
-					int second=ca.get(Calendar.SECOND);//秒
+					int day=ca.get(Calendar.DATE);
+					int minute=ca.get(Calendar.MINUTE);
+					int hour=ca.get(Calendar.HOUR);
+					int second=ca.get(Calendar.SECOND);
 					//int WeekOfYear = ca.get(Calendar.DAY_OF_WEEK);
 					String CurrentDataTime= year +"年"+ month +"月"+ day + "日"+ hour +"时"+ minute +"分"+ second +"秒";
 					filename+=CurrentDataTime;
@@ -348,9 +348,9 @@ public class PageInventoryReal extends Activity {
 					File BuildDir = new File(Environment.getExternalStorageDirectory(), "/UHFData");   //打开UHFData目录，如不存在则生成
 					if(BuildDir.exists()==false)BuildDir.mkdirs();
 					
-					// 创建Excel工作薄
+
 					WritableWorkbook wwb;
-					// 在SD卡中，新建立一个jxl文件
+
 					wwb = Workbook.createWorkbook(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/UHFData/"+filename+".xls"));
 					//Toast.makeText(ComUHF.this, "创建文件成功!", Toast.LENGTH_SHORT).show();
 
@@ -392,8 +392,8 @@ public class PageInventoryReal extends Activity {
 					}
 					
 					
-					wwb.write(); //写入数据
-					wwb.close(); //关闭文件
+					wwb.write();
+					wwb.close();
 					Toast.makeText(PageInventoryReal.this, "文件保存成功!", Toast.LENGTH_SHORT).show();
 
 				}
@@ -410,7 +410,7 @@ public class PageInventoryReal extends Activity {
 			public void onClick(DialogInterface dialog, int which) 
 			{ 
 			}
-		}).show();  //显示对话框
+		}).show();
 	} 
 }
 

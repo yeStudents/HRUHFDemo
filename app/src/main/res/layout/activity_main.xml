@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:id="@+id/main_linearLayout"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF" >
         
@@ -64,7 +64,7 @@
 
     <ImageView
         android:id="@+id/cursor"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="matrix"
         android:src="@drawable/a"

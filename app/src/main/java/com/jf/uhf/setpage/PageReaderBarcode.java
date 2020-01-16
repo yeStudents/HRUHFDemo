@@ -12,8 +12,6 @@ import com.reader.helper.ReaderSetting;
 import com.jf.uhf.LogList;
 import com.jf.uhf.R;
 import com.jf.uhf.UHFApplication;
-import com.jf.uhf.R.id;
-import com.jf.uhf.R.layout;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

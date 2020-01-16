@@ -4,11 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ListView;
 
-/***
- * 自定义ListView子类，继承ListView
- * @author Administrator
- *
- */
+
 public class NoScrollListView extends ListView {
 
 	public NoScrollListView(Context context) {
